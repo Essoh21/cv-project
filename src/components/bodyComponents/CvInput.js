@@ -1,7 +1,10 @@
+import PersonnalInformations from "./cvInputComponents/PersonnalInformations";
+import Profile from "./cvInputComponents/Profile";
 const CvInput = (props) => {
     return (
         <div className={props.inputsClassName}>
-            i am here
+            <PersonnalInformations />
+            <Profile />
         </div>
     )
 }
