@@ -1,15 +1,21 @@
+import Button from "../../universalComponents/Button";
 import TextArea from "../../universalComponents/TextArea";
 const Profile = () => {
     return (
-        <div>
+        <div className="Profile">
             <h3>
                 Profile
             </h3>
             <div>
                 <form>
-                    <TextArea areaLabelContent="Your profile"
+                    <TextArea
+                        areaLabelContent="Your profile"
                         areaId="user-profile"
-                        areaMaxLength="80" />
+                        areaRows="10"
+                    />
+                    <Button
+                        buttonContent="Add Profile"
+                    />
                 </form>
             </div>
         </div>

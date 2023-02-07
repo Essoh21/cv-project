@@ -4,9 +4,13 @@ const Input = (props) => {
             <label htmlFor={props.inputId}>
                 {props.inputLabelContent}
             </label>
-            <input id={props.inputId}
-                type={props.inputType}>
-            </input>
+            <input
+                id={props.inputId}
+                type={props.inputType}
+                name={props.inputnName}
+                style={props.inputStyle}
+            />
+
         </div>
     )
 }

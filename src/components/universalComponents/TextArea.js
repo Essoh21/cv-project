@@ -4,7 +4,11 @@ const TextArea = (props) => {
             <label htmlFor={props.areaId}>
                 {props.areaLabelContent}
             </label>
-            <textarea maxLength={props.areaMaxLength} id={props.areaId} />
+            <textarea
+                id={props.areaId}
+                rows={props.areaRows}
+                cols={props.areaCols}
+            />
         </div>
     )
 }

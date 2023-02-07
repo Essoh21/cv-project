@@ -9,8 +9,12 @@ class Body extends Component {
     render() {
         return (
             <div className="body">
-                <CvInput />
-                <CvOutput />
+                <CvInput
+                    inputsClassName="cv-inputs-container"
+                />
+                <CvOutput
+                    outputsClassName="cv-outputs-container"
+                />
             </div>
         )
     }

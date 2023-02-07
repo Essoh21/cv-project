@@ -1,6 +1,6 @@
 const CvOutput = (props) => {
     return (
-        <div className={props.out}>
+        <div className={props.outputsClassName}>
             i am also here
         </div>
     )
