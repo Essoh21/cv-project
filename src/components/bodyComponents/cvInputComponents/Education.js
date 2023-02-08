@@ -3,8 +3,8 @@ import Button from "../../universalComponents/Button";
 import TextArea from "../../universalComponents/TextArea";
 import { useId } from "react";
 
-const Employment = (props) => {
-    const PositionInputStyle = {
+const Education = (props) => {
+    const TitleInputStyle = {
         width: "clamp(var(--label-width), 100%, 35rem)"
         , boxSizing: "border-box"
     }
@@ -13,24 +13,24 @@ const Employment = (props) => {
             <hr />
             <section>
                 <h3>
-                    Employment
+                    Education
                 </h3>
                 <form>
-                    <div className="EmploymentInputs">
+                    <div className="EducationInputs">
                         <Input
                             inputId={useId()}
                             inputType="text"
-                            inputLabelContent="Position"
+                            inputLabelContent="Title"
                             inputName="position"
-                            inputStyle={PositionInputStyle}
+                            inputStyle={TitleInputStyle}
                         />
 
-                        <div className="EmployerAndCity">
+                        <div className="SchoolAndCity">
                             <Input
                                 inputId={useId()}
                                 inputType="text"
-                                inputLabelContent="Employer"
-                                inputName="employer"
+                                inputLabelContent="School"
+                                inputName="school"
                             />
 
                             <Input
@@ -68,14 +68,14 @@ const Employment = (props) => {
                         />
 
                     </div>
-                    <div className="EmploymentButtons">
+                    <div className="EducationButtons">
                         <Button
                             buttonContent="Delete"
                             buttonType="button"
                             buttonStyle={{ backgroundColor: "#f33", color: "#222" }}
                         />
                         <Button
-                            buttonContent="Add position"
+                            buttonContent="Add Education"
                             buttonType="submit"
                         />
 
@@ -86,4 +86,4 @@ const Employment = (props) => {
     )
 }
 
-export default Employment;
+export default Education;

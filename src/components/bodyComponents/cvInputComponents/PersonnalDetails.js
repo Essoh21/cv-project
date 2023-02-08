@@ -1,7 +1,7 @@
 import Input from "../../universalComponents/Input";
 import Button from "../../universalComponents/Button";
 
-const PersonnalInformations = () => {
+const PersonnalDetails = () => {
     return (
         <div className="PersonnalInfo">
             <h3>
@@ -28,8 +28,9 @@ const PersonnalInformations = () => {
                 <Button buttonType="submit"
                     buttonContent="Add Informations" />
             </form>
+
         </div>
     )
 }
 
-export default PersonnalInformations;
+export default PersonnalDetails;

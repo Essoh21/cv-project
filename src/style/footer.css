@@ -1,5 +1,5 @@
 footer {
-    background-color: #55f;
+    background-color: var(--header-color);
     height: 100%;
     width: 100%;
     color: white;

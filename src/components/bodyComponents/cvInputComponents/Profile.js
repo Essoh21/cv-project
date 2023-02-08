@@ -3,6 +3,7 @@ import TextArea from "../../universalComponents/TextArea";
 const Profile = () => {
     return (
         <div className="Profile">
+            <hr />
             <h3>
                 Profile
             </h3>

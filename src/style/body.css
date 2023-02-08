@@ -11,11 +11,19 @@
 }
 
 .cv-inputs-container {
-    width: clamp(11rem, 40%, 100%);
+    width: clamp(11rem, 100%, 35rem);
     background-color: #eee;
     padding-left: var(--padding);
     padding-right: var(--padding);
     padding-bottom: 2rem;
+}
+
+hr {
+    margin-top: 1.5rem;
+}
+
+button {
+    color: var(--header-color);
 }
 
 /* Personnal info*/
@@ -23,7 +31,7 @@
 .PersonnalInfo {
     box-sizing: border-box;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
@@ -69,38 +77,146 @@
     margin-top: .5rem;
 }
 
-/* Employment*/
+/* Employment and Education*/
 
-.EmploymentContainer {
+.EmploymentContainer,
+.EducationContainer {
     margin: 0;
     width: 100%;
     box-sizing: border-box;
 }
 
-.EmploymentContainer section {
+.EmploymentContainer section,
+.EducationContainer section {
     box-sizing: border-box;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.EmploymentContainer section form {
+.EmploymentContainer section form,
+.EducationContainer section form {
     width: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
+    gap: 1rem;
 }
 
-.EmploymentContainer section input {
+.EmploymentInputs,
+.EducationInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+.EmploymentContainer section input,
+.EducationContainer section input {
     width: var(--label-width);
 }
 
-.PositionInputContainer+div {
-    width: 100%;
-    color: red;
-}
 
-.EmploymentContainer section label {
+.EmploymentContainer section label,
+.EducationContainer section label {
     display: block;
     width: var(--label-width);
+    text-align: center;
+    font-weight: bold;
+}
+
+.EmploymentContainer textarea,
+.EducationContainer textarea {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.EmployerAndCity,
+.EmployerAndCity~div,
+.SchoolAndCity,
+.SchoolAndCity~div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.EmploymentButtons,
+.EducationButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/*  Language */
+
+.LanguageContainer {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.LanguageContainer form {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.LanguageContainer label {
+    display: block;
+    width: var(--label-width);
+}
+
+.LanguageInputs {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.LanguageContainer textarea {
+    width: 100%;
+}
+
+.LanguageButtons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* hobby */
+
+.HobbyContainer {
+    width: 100%;
+    margin: 0;
+}
+
+.HobbyContainer section form {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.HobbyContainer input {
+    width: 100%;
+}
+
+.HobbyButtons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
 }
