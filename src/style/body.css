@@ -10,12 +10,13 @@
     overflow: auto;
 }
 
-.cv-inputs-container {
+.CvInputsContainer {
     width: clamp(11rem, 100%, 35rem);
     background-color: #eee;
     padding-left: var(--padding);
     padding-right: var(--padding);
     padding-bottom: 2rem;
+    margin: 1rem .8rem;
 }
 
 hr {
@@ -219,4 +220,48 @@ button {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
+}
+
+/*********** outputs ********************/
+
+.CvOutputsContainer {
+    width: 210mm;
+    height: 297mm;
+    margin: 1rem .5rem;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 12fr;
+    grid-template-areas: "outputHeader" "outputBody";
+    background-color: white;
+}
+
+.OutputHeader {
+    box-sizing: border-box;
+    grid-area: outputHeader;
+    width: 100%;
+    height: 100%;
+    background-color: #777;
+    padding: 1rem 1.5rem
+}
+
+.OutputProfileContainer {
+    color: #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+
+}
+
+.OutputProfileContainer h4 {
+    margin: 0;
+    padding: 0;
+}
+
+.OutputAdressContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    color: #ccc;
 }

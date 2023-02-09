@@ -10,10 +10,10 @@ class Body extends Component {
         return (
             <div className="body">
                 <CvInput
-                    inputsClassName="cv-inputs-container"
+                    inputsClassName="CvInputsContainer"
                 />
                 <CvOutput
-                    outputsClassName="cv-outputs-container"
+                    outputsClassName="CvOutputsContainer"
                 />
             </div>
         )
