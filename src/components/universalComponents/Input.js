@@ -9,6 +9,7 @@ const Input = (props) => {
                 type={props.inputType}
                 name={props.inputnName}
                 style={props.inputStyle}
+                onChange={props.handleChange}
             />
 
         </div>

@@ -1,7 +1,7 @@
 import Input from "../../universalComponents/Input";
 import Button from "../../universalComponents/Button";
 
-const PersonnalDetails = () => {
+const PersonnalDetails = (props) => {
     return (
         <div className="PersonnalInfo">
             <h3>
@@ -10,20 +10,33 @@ const PersonnalDetails = () => {
             <form>
                 <div>
                     <Input inputId="user-name"
-                        inputLabelContent="Name:" inputType="text" >
-                    </Input>
+                        inputLabelContent="Name:" inputType="text"
+                        handleChange={props.setUserName}
+                    />
+
                     <Input inputId="user-surname"
-                        inputLabelContent="Surname:" inputType="text" >
-                    </Input>
+                        inputLabelContent="Surname:" inputType="text"
+                        handleChange={props.setUserSurname}
+                    />
                     <Input inputId="user-age"
-                        inputLabelContent="Age:" inputType="number" >
-                    </Input>
+                        inputLabelContent="Age:" inputType="number"
+                        handleChange={props.setUserAge}
+                    />
                     <Input inputId="user-email"
-                        inputLabelContent="Email:" inputType="email" >
-                    </Input>
+                        inputLabelContent="Email:" inputType="email"
+                        handleChange={props.setUserEmail}
+                    />
                     <Input inputId="user-phone-number"
-                        inputLabelContent="Phone Number:" inputType="number" >
-                    </Input>
+                        inputLabelContent="Phone Number:"
+                        inputType="number"
+                        handleChange={props.setUserPhoneNumber}
+                    />
+
+                    <Input inputId="user-job-title"
+                        inputLabelContent="Job:"
+                        inputType="text"
+                        handleChange={props.setUserJob}
+                    />
                 </div>
                 <Button buttonType="submit"
                     buttonContent="Add Informations" />

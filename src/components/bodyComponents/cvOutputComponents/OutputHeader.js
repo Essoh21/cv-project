@@ -3,7 +3,8 @@ const OutputHeader = (props) => {
         <div className={props.outputHeaderClassName}>
             <div className={props.profileContainerClassName}>
                 <h2>
-                    {props.userName} {' '} {props.userAge} years old
+                    {props.userName} {' '} {props.userSurname}, {' '}
+                    {props.userAge} years old
                 </h2>
                 <h4>
                     {props.userJob}
@@ -12,7 +13,7 @@ const OutputHeader = (props) => {
             <div className={props.adressContainerClassName}>
                 <h4>
                     <span style={{ fontWeight: "100px" }}>&#128222;</span>
-                    {props.userPhone}
+                    {props.userPhoneNumber}
                 </h4>
                 <h4>
                     {props.userEmail}

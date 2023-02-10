@@ -9,7 +9,15 @@ import Hobby from "./cvInputComponents/Hobby";
 const CvInput = (props) => {
     return (
         <div className={props.inputsClassName}>
-            <PersonnalDetails />
+            <PersonnalDetails
+                setUserName={props.setUserName}
+                setUserSurname={props.setUserSurname}
+                setUserAge={props.setUserAge}
+                setUserEmail={props.setUserEmail}
+                setUserPhoneNumber={props.setUserPhoneNumber}
+                setUserJob={props.setUserJob}
+
+            />
             <Profile />
             <Employment containerClassName="EmploymentContainer" />
             <Education containerClassName="EducationContainer" />
