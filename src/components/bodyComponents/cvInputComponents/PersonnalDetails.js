@@ -2,6 +2,11 @@ import Input from "../../universalComponents/Input";
 import Button from "../../universalComponents/Button";
 
 const PersonnalDetails = (props) => {
+    const addInformations = (e) => {
+        e.preventDefault();
+        alert("success");
+    }
+
     return (
         <div className="PersonnalInfo">
             <h3>
@@ -39,7 +44,9 @@ const PersonnalDetails = (props) => {
                     />
                 </div>
                 <Button buttonType="submit"
-                    buttonContent="Add Informations" />
+                    buttonContent="Add Informations"
+                    handleClick={addInformations}
+                />
             </form>
 
         </div>

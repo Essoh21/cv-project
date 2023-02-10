@@ -236,6 +236,7 @@ button {
     background-color: white;
 }
 
+/* Header */
 .OutputHeader {
     box-sizing: border-box;
     grid-area: outputHeader;
@@ -272,4 +273,31 @@ button {
     flex-direction: row;
     flex-wrap: wrap;
     gap: .5rem;
+}
+
+/* Body*/
+.OutputBody {
+    width: 100%;
+    box-sizing: border-box;
+    grid-area: outputBody;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "outputMainBody outputAsside";
+}
+
+.OutputMainBody {
+    grid-area: outputMainBody;
+    box-sizing: border-box;
+    width: 100%;
+    padding-right: .2rem;
+    padding-left: 1.5rem;
+
+}
+
+.OutputAsside {
+    grid-area: outputAsside;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: .2rem;
 }

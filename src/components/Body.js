@@ -11,10 +11,14 @@ class Body extends Component {
             userAge: '',
             userJob: '',
             userSurname: '',
-            userPhoneNumber: ''
+            userPhoneNumber: '',
+            userProfile: '',
         }
     }
-
+    addInformations = (e) => {
+        e.target.preventDefault();
+        alert('Informations Added');
+    }
     setUserName = (e) => {
         this.setState(
             { userName: e.target.value }
@@ -51,6 +55,14 @@ class Body extends Component {
         )
     }
 
+    setProfile = (e) => {
+        this.setState(
+            {
+                userProfile: e.target.value
+            }
+        )
+    }
+
 
     render() {
         return (
@@ -63,6 +75,7 @@ class Body extends Component {
                     setUserPhoneNumber={this.setUserPhoneNumber}
                     setUserEmail={this.setUserEmail}
                     setUserJob={this.setUserJob}
+                    setProfile={this.setProfile}
                 />
                 <CvOutput
                     outputsClassName="CvOutputsContainer"
@@ -72,6 +85,16 @@ class Body extends Component {
                     userAge={this.state.userAge}
                     userJob={this.state.userJob}
                     userPhoneNumber={this.state.userPhoneNumber}
+                    userProfile={this.state.userProfile}
+
+                    sectionTitle={this.state.employmentTitle}
+                    position={this.state.position}
+                    employer={this.state.employer}
+                    employmentState={this.state.employmentState}
+                    startDate={this.state.startDate}
+                    endDate={this.state.endDate}
+                    isPositionPresent={this.state.isPositionPresent}
+                    employmentDescription={this.state.employmentDescription}
 
                 />
             </div>

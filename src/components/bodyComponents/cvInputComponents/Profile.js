@@ -1,6 +1,7 @@
 import Button from "../../universalComponents/Button";
 import TextArea from "../../universalComponents/TextArea";
-const Profile = () => {
+import preventDefaultSubmit from "../../universalComponents/preventDefaultSubmit";
+const Profile = (props) => {
     return (
         <div className="Profile">
             <hr />
@@ -13,9 +14,11 @@ const Profile = () => {
                         areaLabelContent="Your profile"
                         areaId="user-profile"
                         areaRows="10"
+                        handleChange={props.handleProfileChange}
                     />
                     <Button
                         buttonContent="Add Profile"
+                        handleClick={preventDefaultSubmit}
                     />
                 </form>
             </div>

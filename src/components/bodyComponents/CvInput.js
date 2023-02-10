@@ -18,7 +18,9 @@ const CvInput = (props) => {
                 setUserJob={props.setUserJob}
 
             />
-            <Profile />
+            <Profile
+                handleProfileChange={props.setProfile}
+            />
             <Employment containerClassName="EmploymentContainer" />
             <Education containerClassName="EducationContainer" />
             <Language containerClassName="LanguageContainer" />

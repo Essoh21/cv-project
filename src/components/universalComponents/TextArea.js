@@ -8,6 +8,7 @@ const TextArea = (props) => {
                 id={props.areaId}
                 rows={props.areaRows}
                 cols={props.areaCols}
+                onChange={props.handleChange}
             />
         </div>
     )

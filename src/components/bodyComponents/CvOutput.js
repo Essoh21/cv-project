@@ -1,4 +1,5 @@
 import OutputHeader from "./cvOutputComponents/OutputHeader";
+import OutputBody from "./cvOutputComponents/OutputBody";
 
 const CvOutput = (props) => {
     return (
@@ -13,6 +14,19 @@ const CvOutput = (props) => {
                 userEmail={props.userEmail}
                 profileContainerClassName="OutputProfileContainer"
                 adressContainerClassName="OutputAdressContainer"
+            />
+            <OutputBody
+                outputBodyClassName="OutputBody"
+                userProfile={props.userProfile}
+                sectionTitle={props.employmentTitle}
+                position={props.position}
+                employer={props.employer}
+                employmentState={props.employmentState}
+                startDate={props.startDate}
+                endDate={props.endDate}
+                isPositionPresent={props.isPositionPresent}
+                employmentDescription={props.employmentDescription}
+
             />
         </div>
     )
