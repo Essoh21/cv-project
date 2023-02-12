@@ -23,6 +23,7 @@ const Employment = (props) => {
                             inputLabelContent="Position"
                             inputName="position"
                             inputStyle={PositionInputStyle}
+                            handleChange={props.employmentHandler.setEmploymentPosition}
                         />
 
                         <div className="EmployerAndCity">
@@ -31,6 +32,7 @@ const Employment = (props) => {
                                 inputType="text"
                                 inputLabelContent="Employer"
                                 inputName="employer"
+                                handleChange={props.employmentHandler.setEmploymentEmployer}
                             />
 
                             <Input
@@ -38,6 +40,7 @@ const Employment = (props) => {
                                 inputType="text"
                                 inputLabelContent="City"
                                 inputName="city"
+                                handleChange={props.employmentHandler.setEmploymentState}
                             />
                         </div>
                         <div>
@@ -46,18 +49,21 @@ const Employment = (props) => {
                                 inputLabelContent="Start date"
                                 inputId={useId()}
                                 inputName="startDate"
+                                handleChange={props.employmentHandler.setEmploymentStartDate}
                             />
                             <Input
                                 inputType="date"
                                 inputLabelContent="End date"
                                 inputId={useId()}
                                 inputName="endDate"
+                                handleChange={props.employmentHandler.setEmploymentEndDate}
                             />
                             <Input
                                 inputType="checkbox"
                                 inputLabelContent="Present"
                                 inputId={useId()}
                                 inputName="present"
+                                handleChange={props.employmentHandler.setEmploymentIsPresent}
                             />
                         </div>
 
@@ -65,6 +71,7 @@ const Employment = (props) => {
                             areaRows="6"
                             areaId={useId()}
                             areaLabelContent="Description"
+                            handleChange={props.employmentHandler.setEmploymentDescription}
                         />
 
                     </div>

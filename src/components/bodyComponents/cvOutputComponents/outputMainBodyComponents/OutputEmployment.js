@@ -1,20 +1,20 @@
 const OutputEmployment = (props) => {
     return (
-        <section className={props.OutputEmploymentClassName}>
+        <section className={props.outputEmploymentClassName}>
             <h3>
-                {props.sectionTitle}
+                {props.employment.title}
             </h3>
-            <div>
+            <div className="PositionAndDate">
                 <span>
-                    <h4>{props.position} </h4>
-                    <p>{props.employer}, {props.employmentState} </p>
+                    <h4>{props.employment.position} </h4>
+                    <p>{props.employment.employer}, {props.employment.state} </p>
                 </span>
                 <span>
-                    {props.startDate} - {props.isPositionPresent ? "present" : props.endDate}
+                    {props.employment.startDate} -- {props.employment.isPositionPresent ? "present" : props.employment.endDate}
                 </span>
             </div>
             <p>
-                {props.employmentDescription}
+                {props.employment.description}
             </p>
 
         </section>

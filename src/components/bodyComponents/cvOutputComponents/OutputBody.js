@@ -10,14 +10,8 @@ const OutputBody = (props) => {
                     profile={props.userProfile}
                 />
                 <OutputEmployment
-                    sectionTitle={props.employmentTitle}
-                    position={props.position}
-                    employer={props.employer}
-                    employmentState={props.employmentState}
-                    startDate={props.startDate}
-                    endDate={props.endDate}
-                    isPositionPresent={props.isPositionPresent}
-                    employmentDescription={props.employmentDescription}
+                    outputEmploymentClassName="EmploymentSection"
+                    employment={props.employment}
                 />
             </div>
             <div className="OutputAsside">

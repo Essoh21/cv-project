@@ -295,9 +295,50 @@ button {
 
 }
 
+.EmploymentSection {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.EmploymentSection h3 {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.EmploymentSection h4 {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+}
+
+.EmploymentSection div {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* aside*/
 .OutputAsside {
     grid-area: outputAsside;
     width: 100%;
     box-sizing: border-box;
     padding-left: .2rem;
+}
+
+.PositionAndDate {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.PositionAndDate p {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
 }

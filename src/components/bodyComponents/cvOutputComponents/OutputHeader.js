@@ -3,20 +3,20 @@ const OutputHeader = (props) => {
         <div className={props.outputHeaderClassName}>
             <div className={props.profileContainerClassName}>
                 <h2>
-                    {props.userName} {' '} {props.userSurname}, {' '}
-                    {props.userAge} years old
+                    {props.personalDetails.userName} {' '} {props.personalDetails.userSurname}, {' '}
+                    {props.personalDetails.userAge} years old
                 </h2>
                 <h4>
-                    {props.userJob}
+                    {props.personalDetails.userJob}
                 </h4>
             </div>
             <div className={props.adressContainerClassName}>
                 <h4>
                     <span style={{ fontWeight: "100px" }}>&#128222;</span>
-                    {props.userPhoneNumber}
+                    {props.personalDetails.userPhoneNumber}
                 </h4>
                 <h4>
-                    {props.userEmail}
+                    {props.personalDetails.userEmail}
                 </h4>
             </div>
 

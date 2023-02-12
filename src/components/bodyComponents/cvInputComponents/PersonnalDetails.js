@@ -16,31 +16,31 @@ const PersonnalDetails = (props) => {
                 <div>
                     <Input inputId="user-name"
                         inputLabelContent="Name:" inputType="text"
-                        handleChange={props.setUserName}
+                        handleChange={props.inputsHandlers.setUserName}
                     />
 
                     <Input inputId="user-surname"
                         inputLabelContent="Surname:" inputType="text"
-                        handleChange={props.setUserSurname}
+                        handleChange={props.inputsHandlers.setUserSurname}
                     />
                     <Input inputId="user-age"
                         inputLabelContent="Age:" inputType="number"
-                        handleChange={props.setUserAge}
+                        handleChange={props.inputsHandlers.setUserAge}
                     />
                     <Input inputId="user-email"
                         inputLabelContent="Email:" inputType="email"
-                        handleChange={props.setUserEmail}
+                        handleChange={props.inputsHandlers.setUserEmail}
                     />
                     <Input inputId="user-phone-number"
                         inputLabelContent="Phone Number:"
                         inputType="number"
-                        handleChange={props.setUserPhoneNumber}
+                        handleChange={props.inputsHandlers.setUserPhoneNumber}
                     />
 
                     <Input inputId="user-job-title"
                         inputLabelContent="Job:"
                         inputType="text"
-                        handleChange={props.setUserJob}
+                        handleChange={props.inputsHandlers.setUserJob}
                     />
                 </div>
                 <Button buttonType="submit"
