@@ -7,7 +7,7 @@ const Input = (props) => {
             <input
                 id={props.inputId}
                 type={props.inputType}
-                name={props.inputnName}
+                name={props.inputName}
                 style={props.inputStyle}
                 onChange={props.handleChange}
             />

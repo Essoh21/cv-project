@@ -10,15 +10,15 @@ const CvInput = (props) => {
     return (
         <div className={props.inputsClassName}>
             <PersonnalDetails
-                inputsHandlers={props.inputsHandlers}
+                inputsHandler={props.inputsHandler}
 
             />
             <Profile
-                handleProfileChange={props.inputsHandlers.setProfile}
+                handleProfileChange={props.inputsHandler}
             />
             <Employment
                 containerClassName="EmploymentContainer"
-                employmentHandler={props.employmentHandler}
+                setEmploymentElement={props.setEmploymentElement}
             />
             <Education containerClassName="EducationContainer" />
             <Language containerClassName="LanguageContainer" />

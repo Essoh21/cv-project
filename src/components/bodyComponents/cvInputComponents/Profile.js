@@ -15,6 +15,7 @@ const Profile = (props) => {
                         areaId="user-profile"
                         areaRows="10"
                         handleChange={props.handleProfileChange}
+                        textAreaName="userProfile"
                     />
                     <Button
                         buttonContent="Add Profile"

@@ -16,31 +16,38 @@ const PersonnalDetails = (props) => {
                 <div>
                     <Input inputId="user-name"
                         inputLabelContent="Name:" inputType="text"
-                        handleChange={props.inputsHandlers.setUserName}
+                        handleChange={props.inputsHandler}
+                        inputName="userName"
                     />
 
                     <Input inputId="user-surname"
                         inputLabelContent="Surname:" inputType="text"
-                        handleChange={props.inputsHandlers.setUserSurname}
+                        handleChange={props.inputsHandler}
+                        inputName="userSurname"
+
                     />
                     <Input inputId="user-age"
                         inputLabelContent="Age:" inputType="number"
-                        handleChange={props.inputsHandlers.setUserAge}
+                        handleChange={props.inputsHandler}
+                        inputName="userAge"
                     />
                     <Input inputId="user-email"
                         inputLabelContent="Email:" inputType="email"
-                        handleChange={props.inputsHandlers.setUserEmail}
+                        handleChange={props.inputsHandler}
+                        inputName="userEmail"
                     />
                     <Input inputId="user-phone-number"
                         inputLabelContent="Phone Number:"
                         inputType="number"
-                        handleChange={props.inputsHandlers.setUserPhoneNumber}
+                        handleChange={props.inputsHandler}
+                        inputName="userPhoneNumber"
                     />
 
                     <Input inputId="user-job-title"
                         inputLabelContent="Job:"
                         inputType="text"
-                        handleChange={props.inputsHandlers.setUserJob}
+                        handleChange={props.inputsHandler}
+                        inputName="userJob"
                     />
                 </div>
                 <Button buttonType="submit"

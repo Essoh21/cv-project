@@ -23,7 +23,7 @@ const Employment = (props) => {
                             inputLabelContent="Position"
                             inputName="position"
                             inputStyle={PositionInputStyle}
-                            handleChange={props.employmentHandler.setEmploymentPosition}
+                            handleChange={props.setEmploymentElement}
                         />
 
                         <div className="EmployerAndCity">
@@ -32,15 +32,15 @@ const Employment = (props) => {
                                 inputType="text"
                                 inputLabelContent="Employer"
                                 inputName="employer"
-                                handleChange={props.employmentHandler.setEmploymentEmployer}
+                                handleChange={props.setEmploymentElement}
                             />
 
                             <Input
                                 inputId={useId()}
                                 inputType="text"
                                 inputLabelContent="City"
-                                inputName="city"
-                                handleChange={props.employmentHandler.setEmploymentState}
+                                inputName="state"
+                                handleChange={props.setEmploymentElement}
                             />
                         </div>
                         <div>
@@ -49,21 +49,21 @@ const Employment = (props) => {
                                 inputLabelContent="Start date"
                                 inputId={useId()}
                                 inputName="startDate"
-                                handleChange={props.employmentHandler.setEmploymentStartDate}
+                                handleChange={props.setEmploymentElement}
                             />
                             <Input
                                 inputType="date"
                                 inputLabelContent="End date"
                                 inputId={useId()}
                                 inputName="endDate"
-                                handleChange={props.employmentHandler.setEmploymentEndDate}
+                                handleChange={props.setEmploymentElement}
                             />
                             <Input
                                 inputType="checkbox"
                                 inputLabelContent="Present"
                                 inputId={useId()}
-                                inputName="present"
-                                handleChange={props.employmentHandler.setEmploymentIsPresent}
+                                inputName="isPositionPresent"
+                                handleChange={props.setEmploymentElement}
                             />
                         </div>
 
@@ -71,7 +71,8 @@ const Employment = (props) => {
                             areaRows="6"
                             areaId={useId()}
                             areaLabelContent="Description"
-                            handleChange={props.employmentHandler.setEmploymentDescription}
+                            handleChange={props.setEmploymentElement}
+                            textAreaName='description'
                         />
 
                     </div>

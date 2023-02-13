@@ -9,6 +9,7 @@ const TextArea = (props) => {
                 rows={props.areaRows}
                 cols={props.areaCols}
                 onChange={props.handleChange}
+                name={props.textAreaName}
             />
         </div>
     )
