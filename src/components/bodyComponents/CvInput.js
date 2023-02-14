@@ -11,15 +11,29 @@ const CvInput = (props) => {
         <div className={props.inputsClassName}>
             <PersonnalDetails
                 inputsHandler={props.inputsHandler}
-
             />
             <Profile
                 handleProfileChange={props.inputsHandler}
             />
-            <Employment
-                containerClassName="EmploymentContainer"
-                setEmploymentElement={props.setEmploymentElement}
-            />
+            <div>
+                <hr />
+                <h3>
+                    Employments
+                </h3>
+                {props.employments.map((employment) => (
+                    <Employment
+                        key={employment.id}
+                        employment={employment}
+                        containerClassName="employmentContainer"
+                        handleAddEmployment={props.handleAddEmployment}
+                        setEmploymentElement={(event) =>
+                            props.handleSetEmploymentElement(employment.id, event)}
+                        handleDeleteEmployment={() => props.handleDeleteEmployment(employment.id)}
+                    />
+                ))}
+
+            </div>
+
             <Education containerClassName="EducationContainer" />
             <Language containerClassName="LanguageContainer" />
             <Hobby containerClassName="HobbyContainer" />

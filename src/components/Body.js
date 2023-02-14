@@ -17,19 +17,45 @@ class Body extends Component {
 
             },
 
-            employment: {
-                title: 'Employments',
-                position: '',
-                employer: '',
-                isPositionPresent: false,
-                startDate: '',
-                endDate: '',
-                description: '',
-                state: ''
-            },
-            employments: []
+            employments: [
+                {
+                    position: '',
+                    employer: '',
+                    isPositionPresent: false,
+                    startDate: '',
+                    endDate: '',
+                    description: '',
+                    state: ''
+                },
+            ]
         }
     }
+
+    handleAddEmployment = (event) => {
+        event.preventDefault();
+        const newEmployment = {
+            id: Date.now(),
+            position: '',
+            employer: '',
+            isPositionPresent: false,
+            startDate: '',
+            endDate: '',
+            description: '',
+            state: ''
+        }
+        this.setState({
+            employments: [...this.state.employments, newEmployment]
+        })
+    }
+
+    handleDeleteEmployment = (id) => {
+        this.setState({
+            employments: this.state.employments.filter(
+                (employment) => employment.id !== id
+            )
+        });
+    }
+
     addInformations = (e) => {
         e.target.preventDefault();
         alert('Informations Added');
@@ -45,14 +71,20 @@ class Body extends Component {
         })
     }
 
-    setEmploymentElement = (e) => {
-        const employmentCopy = JSON.parse(JSON.stringify(this.state.employment));
-        const target = e.target;
-        const element = target.name;
-        employmentCopy[element] = e.target.value;
-        this.setState({
-            employment: employmentCopy
-        })
+
+    handleSetEmploymentElement = (id, event) => {
+        const { name, value, type, checked } = event.target;
+        this.setState((prevState) => ({
+            employments: prevState.employments.map((employment) => {
+                if (employment.id === id) {
+                    return {
+                        ...employment,
+                        [name]: type === 'checkbox' ? checked : value
+                    };
+                }
+                return employment;
+            })
+        }));
     }
 
     render() {
@@ -61,12 +93,16 @@ class Body extends Component {
                 <CvInput
                     inputsClassName="CvInputsContainer"
                     inputsHandler={this.setPersonalDetailsElement}
-                    setEmploymentElement={this.setEmploymentElement}
+                    setEmploymentElement={this.handleSetEmploymentElement}
+                    employments={this.state.employments}
+                    handleSetEmploymentElement={this.handleSetEmploymentElement}
+                    handleAddEmployment={this.handleAddEmployment}
+                    handleDeleteEmployment={this.handleDeleteEmployment}
                 />
                 <CvOutput
                     outputsClassName="CvOutputsContainer"
                     personalDetails={this.state.personalDetails}
-                    employment={this.state.employment}
+                    employments={this.state.employments}
                 />
             </div>
         )

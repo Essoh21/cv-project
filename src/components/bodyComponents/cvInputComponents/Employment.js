@@ -10,11 +10,7 @@ const Employment = (props) => {
     }
     return (
         <div className={props.containerClassName}>
-            <hr />
             <section>
-                <h3>
-                    Employment
-                </h3>
                 <form>
                     <div className="EmploymentInputs">
                         <Input
@@ -24,6 +20,7 @@ const Employment = (props) => {
                             inputName="position"
                             inputStyle={PositionInputStyle}
                             handleChange={props.setEmploymentElement}
+                            inputValue={props.employment.position}
                         />
 
                         <div className="EmployerAndCity">
@@ -33,6 +30,7 @@ const Employment = (props) => {
                                 inputLabelContent="Employer"
                                 inputName="employer"
                                 handleChange={props.setEmploymentElement}
+                                inputValue={props.employment.employer}
                             />
 
                             <Input
@@ -41,6 +39,7 @@ const Employment = (props) => {
                                 inputLabelContent="City"
                                 inputName="state"
                                 handleChange={props.setEmploymentElement}
+                                inputValue={props.employment.state}
                             />
                         </div>
                         <div>
@@ -50,6 +49,7 @@ const Employment = (props) => {
                                 inputId={useId()}
                                 inputName="startDate"
                                 handleChange={props.setEmploymentElement}
+                                inputValue={props.employment.startDate}
                             />
                             <Input
                                 inputType="date"
@@ -57,6 +57,7 @@ const Employment = (props) => {
                                 inputId={useId()}
                                 inputName="endDate"
                                 handleChange={props.setEmploymentElement}
+                                inputValue={props.employment.endDate}
                             />
                             <Input
                                 inputType="checkbox"
@@ -64,6 +65,7 @@ const Employment = (props) => {
                                 inputId={useId()}
                                 inputName="isPositionPresent"
                                 handleChange={props.setEmploymentElement}
+                                inputValue={props.employment.isPositionPresent}
                             />
                         </div>
 
@@ -81,10 +83,12 @@ const Employment = (props) => {
                             buttonContent="Delete"
                             buttonType="button"
                             buttonStyle={{ backgroundColor: "#f33", color: "#222" }}
+                            handleClick={props.handleDeleteEmployment}
                         />
                         <Button
-                            buttonContent="Add position"
+                            buttonContent="Add Employment"
                             buttonType="submit"
+                            handleClick={props.handleAddEmployment}
                         />
 
                     </div>

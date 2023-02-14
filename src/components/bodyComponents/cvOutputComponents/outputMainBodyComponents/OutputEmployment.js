@@ -2,20 +2,28 @@ const OutputEmployment = (props) => {
     return (
         <section className={props.outputEmploymentClassName}>
             <h3>
-                {props.employment.title}
+                Employment
             </h3>
-            <div className="PositionAndDate">
-                <span>
-                    <h4>{props.employment.position} </h4>
-                    <p>{props.employment.employer}, {props.employment.state} </p>
-                </span>
-                <span>
-                    {props.employment.startDate} -- {props.employment.isPositionPresent ? "present" : props.employment.endDate}
-                </span>
-            </div>
-            <p>
-                {props.employment.description}
-            </p>
+            {props.employments.map((employment) => (
+                <div className="DisplayedEmployment"
+                    key={employment.id}
+                >
+                    <div className="PositionAndDate">
+                        <span>
+                            <h4>{employment.position} </h4>
+                            <p>{employment.employer}, {employment.state} </p>
+                        </span>
+                        <span>
+                            {employment.startDate} -- {employment.isPositionPresent ? "present" : employment.endDate}
+                        </span>
+                    </div>
+                    <p>
+                        {employment.description}
+                    </p>
+                </div>
+            ))}
+
+
 
         </section>
     )

@@ -11,7 +11,7 @@ const OutputBody = (props) => {
                 />
                 <OutputEmployment
                     outputEmploymentClassName="EmploymentSection"
-                    employment={props.employment}
+                    employments={props.employments}
                 />
             </div>
             <div className="OutputAsside">

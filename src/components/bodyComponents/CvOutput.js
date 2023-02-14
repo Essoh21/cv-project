@@ -13,7 +13,7 @@ const CvOutput = (props) => {
             <OutputBody
                 outputBodyClassName="OutputBody"
                 userProfile={props.personalDetails.userProfile}
-                employment={props.employment}
+                employments={props.employments}
 
             />
         </div>
