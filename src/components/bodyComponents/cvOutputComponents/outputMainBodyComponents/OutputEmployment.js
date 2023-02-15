@@ -5,8 +5,8 @@ const OutputEmployment = (props) => {
                 Employment
             </h3>
             {props.employments.map((employment) => (
-                <div className="DisplayedEmployment"
-                    key={employment.id}
+                <div key={employment.id}
+                    className="DisplayedEmployment"
                 >
                     <div className="PositionAndDate">
                         <span>

@@ -17,24 +17,35 @@ const CvInput = (props) => {
             />
             <div>
                 <hr />
-                <h3>
+                <h3 >
                     Employments
                 </h3>
                 {props.employments.map((employment) => (
-                    <Employment
-                        key={employment.id}
+                    <Employment key={employment.id}
                         employment={employment}
-                        containerClassName="employmentContainer"
-                        handleAddEmployment={props.handleAddEmployment}
+                        containerClassName="EmploymentContainer"
+                        handleAddEmployment={props.employmentHandlers.handleAddEmployment}
                         setEmploymentElement={(event) =>
-                            props.handleSetEmploymentElement(employment.id, event)}
-                        handleDeleteEmployment={() => props.handleDeleteEmployment(employment.id)}
+                            props.employmentHandlers.setEmploymentElement(employment.id, event)}
+                        handleDeleteEmployment={() => props.employmentHandlers.handleDeleteEmployment(employment.id)}
                     />
                 ))}
 
             </div>
-
-            <Education containerClassName="EducationContainer" />
+            <div>
+                <hr />
+                <h3>Education</h3>
+                {props.education.map((educationLevel) => (
+                    <Education key={educationLevel.id}
+                        containerClassName="EducationContainer"
+                        education={educationLevel}
+                        handleAddLevel={props.educationHandlers.handleAddEducation}
+                        setEducationElement={(event) =>
+                            props.educationHandlers.setEducationElement(educationLevel.id, event)}
+                        handleDeleteEducation={() => props.educationHandlers.handleDeleteEducation(educationLevel.id)}
+                    />
+                ))}
+            </div>
             <Language containerClassName="LanguageContainer" />
             <Hobby containerClassName="HobbyContainer" />
         </div>

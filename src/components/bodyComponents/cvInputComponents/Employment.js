@@ -11,7 +11,7 @@ const Employment = (props) => {
     return (
         <div className={props.containerClassName}>
             <section>
-                <form>
+                <form >
                     <div className="EmploymentInputs">
                         <Input
                             inputId={useId()}
@@ -44,7 +44,7 @@ const Employment = (props) => {
                         </div>
                         <div>
                             <Input
-                                inputType="date"
+                                inputType="month"
                                 inputLabelContent="Start date"
                                 inputId={useId()}
                                 inputName="startDate"
@@ -52,7 +52,7 @@ const Employment = (props) => {
                                 inputValue={props.employment.startDate}
                             />
                             <Input
-                                inputType="date"
+                                inputType="month"
                                 inputLabelContent="End date"
                                 inputId={useId()}
                                 inputName="endDate"
@@ -86,7 +86,7 @@ const Employment = (props) => {
                             handleClick={props.handleDeleteEmployment}
                         />
                         <Button
-                            buttonContent="Add Employment"
+                            buttonContent="Add another Employment"
                             buttonType="submit"
                             handleClick={props.handleAddEmployment}
                         />

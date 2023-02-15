@@ -19,6 +19,7 @@ class Body extends Component {
 
             employments: [
                 {
+                    id: 1,
                     position: '',
                     employer: '',
                     isPositionPresent: false,
@@ -27,6 +28,18 @@ class Body extends Component {
                     description: '',
                     state: ''
                 },
+            ],
+            education: [
+                {
+                    id: 1,
+                    title: '',
+                    state: '',
+                    school: '',
+                    isEducationPresent: false,
+                    description: '',
+                    startDate: '',
+                    endDate: '',
+                }
             ]
         }
     }
@@ -48,12 +61,41 @@ class Body extends Component {
         })
     }
 
-    handleDeleteEmployment = (id) => {
+    handleAddEducation = (event) => {
+        event.preventDefault();
+        const newLevel = {
+            id: Date.now(),
+            title: '',
+            state: '',
+            school: '',
+            isEducationPresent: false,
+            description: '',
+            startDate: '',
+            endDate: '',
+        }
         this.setState({
-            employments: this.state.employments.filter(
-                (employment) => employment.id !== id
-            )
-        });
+            education: [...this.state.education, newLevel]
+        })
+    }
+
+    handleDeleteEmployment = (id) => {
+        if (id !== 1) {
+            this.setState({
+                employments: this.state.employments.filter(
+                    (employment) => employment.id !== id
+                )
+            });
+        }
+    }
+
+    handleDeleteEducation = (id) => {
+        if (id !== 1) {
+            this.setState({
+                education: this.state.education.filter(
+                    (educationLevel) => educationLevel.id !== id
+                )
+            });
+        }
     }
 
     addInformations = (e) => {
@@ -87,22 +129,52 @@ class Body extends Component {
         }));
     }
 
+    handleSetEducationElement = (id, event) => {
+        const { name, value, type, checked } = event.target;
+        this.setState((prevState) => ({
+            education: prevState.education.map((educationLevel) => {
+                if (educationLevel.id === id) {
+                    return {
+                        ...educationLevel,
+                        [name]: type === 'checkbox' ? checked : value
+                    };
+                }
+                return educationLevel;
+            })
+        }));
+    }
+
+    employmentHandlers = {
+        handleDeleteEmployment: this.handleDeleteEmployment,
+        handleAddEmployment: this.handleAddEmployment,
+        setEmploymentElement: this.handleSetEmploymentElement
+
+    }
+
+    educationHandlers = {
+        handleDeleteEducation: this.handleDeleteEducation,
+        handleAddEducation: this.handleAddEducation,
+        setEducationElement: this.handleSetEducationElement
+
+    }
+
+
     render() {
         return (
             <div className="body">
                 <CvInput
                     inputsClassName="CvInputsContainer"
                     inputsHandler={this.setPersonalDetailsElement}
-                    setEmploymentElement={this.handleSetEmploymentElement}
+                    employmentHandlers={this.employmentHandlers}
                     employments={this.state.employments}
-                    handleSetEmploymentElement={this.handleSetEmploymentElement}
-                    handleAddEmployment={this.handleAddEmployment}
-                    handleDeleteEmployment={this.handleDeleteEmployment}
+                    education={this.state.education}
+                    educationHandlers={this.educationHandlers}
                 />
                 <CvOutput
                     outputsClassName="CvOutputsContainer"
                     personalDetails={this.state.personalDetails}
                     employments={this.state.employments}
+                    education={this.state.education}
                 />
             </div>
         )

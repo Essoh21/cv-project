@@ -295,7 +295,8 @@ button {
 
 }
 
-.EmploymentSection {
+.EmploymentSection,
+.DisplayedEmployment {
     box-sizing: border-box;
     width: 100%;
     margin: 0;
@@ -307,13 +308,15 @@ button {
 .EmploymentSection h3 {
     width: 100%;
     box-sizing: border-box;
-    margin: 0;
+    margin: 0 0 .5rem 0;
+
 }
 
 .EmploymentSection h4 {
     margin: 0;
     width: 100%;
     padding: 0;
+    color: #555;
 }
 
 .EmploymentSection div {
@@ -335,10 +338,13 @@ button {
 .PositionAndDate {
     width: 100%;
     box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .PositionAndDate p {
     box-sizing: border-box;
     width: 100%;
     margin: 0;
+    color: #777;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }

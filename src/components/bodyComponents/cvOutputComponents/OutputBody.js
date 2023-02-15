@@ -1,5 +1,6 @@
 import OutputEmployment from "./outputMainBodyComponents/OutputEmployment";
 import OutputProfile from "./outputMainBodyComponents/OutputProfile";
+import OutputEducation from "./outputMainBodyComponents/OutputEducation";
 
 const OutputBody = (props) => {
     return (
@@ -12,6 +13,10 @@ const OutputBody = (props) => {
                 <OutputEmployment
                     outputEmploymentClassName="EmploymentSection"
                     employments={props.employments}
+                />
+                <OutputEducation
+                    outputEducationClassName='EducationSection'
+                    education={props.education}
                 />
             </div>
             <div className="OutputAsside">

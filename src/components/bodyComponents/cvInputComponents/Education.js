@@ -12,17 +12,16 @@ const Education = (props) => {
         <div className={props.containerClassName}>
             <hr />
             <section>
-                <h3>
-                    Education
-                </h3>
                 <form>
                     <div className="EducationInputs">
                         <Input
                             inputId={useId()}
                             inputType="text"
                             inputLabelContent="Title"
-                            inputName="position"
+                            inputName="title"
                             inputStyle={TitleInputStyle}
+                            inputValue={props.education.title}
+                            handleChange={props.setEducationElement}
                         />
 
                         <div className="SchoolAndCity">
@@ -31,33 +30,44 @@ const Education = (props) => {
                                 inputType="text"
                                 inputLabelContent="School"
                                 inputName="school"
+                                inputValue={props.education.school}
+                                handleChange={props.setEducationElement}
                             />
 
                             <Input
                                 inputId={useId()}
                                 inputType="text"
                                 inputLabelContent="City"
-                                inputName="city"
+                                inputName="state"
+                                inputValue={props.education.state}
+                                handleChange={props.setEducationElement}
+
                             />
                         </div>
                         <div>
                             <Input
-                                inputType="date"
+                                inputType="month"
                                 inputLabelContent="Start date"
                                 inputId={useId()}
                                 inputName="startDate"
+                                inputValue={props.education.startDate}
+                                handleChange={props.setEducationElement}
                             />
                             <Input
-                                inputType="date"
+                                inputType="month"
                                 inputLabelContent="End date"
                                 inputId={useId()}
                                 inputName="endDate"
+                                inputValue={props.education.endDate}
+                                handleChange={props.setEducationElement}
                             />
                             <Input
                                 inputType="checkbox"
                                 inputLabelContent="Present"
                                 inputId={useId()}
                                 inputName="present"
+                                inputValue={props.education.isEducationPresent}
+                                handleChange={props.setEducationElement}
                             />
                         </div>
 
@@ -65,6 +75,8 @@ const Education = (props) => {
                             areaRows="6"
                             areaId={useId()}
                             areaLabelContent="Description"
+                            handleChange={props.setEducationElement}
+                            textAreaName='description'
                         />
 
                     </div>
@@ -73,10 +85,12 @@ const Education = (props) => {
                             buttonContent="Delete"
                             buttonType="button"
                             buttonStyle={{ backgroundColor: "#f33", color: "#222" }}
+                            handleClick={props.handleDeleteEducation}
                         />
                         <Button
-                            buttonContent="Add Education"
+                            buttonContent="Add another Level"
                             buttonType="submit"
+                            handleClick={props.handleAddLevel}
                         />
 
                     </div>
