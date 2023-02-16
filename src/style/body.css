@@ -296,7 +296,9 @@ button {
 }
 
 .EmploymentSection,
-.DisplayedEmployment {
+.DisplayedEmployment,
+.EducationSection,
+.DisplayedEducation {
     box-sizing: border-box;
     width: 100%;
     margin: 0;
@@ -305,21 +307,24 @@ button {
     flex-direction: column;
 }
 
-.EmploymentSection h3 {
+.EmploymentSection h3,
+.EducationSection h3 {
     width: 100%;
     box-sizing: border-box;
     margin: 0 0 .5rem 0;
 
 }
 
-.EmploymentSection h4 {
+.EmploymentSection h4,
+.EducationSection h4 {
     margin: 0;
     width: 100%;
     padding: 0;
     color: #555;
 }
 
-.EmploymentSection div {
+.EmploymentSection div,
+.EducationSection div {
     width: 100%;
     box-sizing: border-box;
     display: flex;
@@ -335,13 +340,15 @@ button {
     padding-left: .2rem;
 }
 
-.PositionAndDate {
+.PositionAndDate,
+.TitleAndDate {
     width: 100%;
     box-sizing: border-box;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.PositionAndDate p {
+.PositionAndDate p,
+.TitleAndDate p {
     box-sizing: border-box;
     width: 100%;
     margin: 0;

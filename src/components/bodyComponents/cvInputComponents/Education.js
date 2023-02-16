@@ -65,7 +65,7 @@ const Education = (props) => {
                                 inputType="checkbox"
                                 inputLabelContent="Present"
                                 inputId={useId()}
-                                inputName="present"
+                                inputName="isEducationPresent"
                                 inputValue={props.education.isEducationPresent}
                                 handleChange={props.setEducationElement}
                             />

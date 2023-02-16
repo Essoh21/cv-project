@@ -40,7 +40,13 @@ class Body extends Component {
                     startDate: '',
                     endDate: '',
                 }
-            ]
+            ],
+            languages: [{
+                id: 1,
+                language: '',
+                level: 'Fluent',
+                description: ''
+            }]
         }
     }
 
@@ -78,11 +84,33 @@ class Body extends Component {
         })
     }
 
+    handleAddLanguage = (event) => {
+        event.preventDefault();
+        const newLanguage = {
+            id: Date.now(),
+            language: '',
+            level: 'Fluent'
+        }
+        this.setState({
+            languages: [...this.state.languages, newLanguage]
+        })
+    }
+
     handleDeleteEmployment = (id) => {
         if (id !== 1) {
             this.setState({
                 employments: this.state.employments.filter(
                     (employment) => employment.id !== id
+                )
+            });
+        }
+    }
+
+    handleDeleteLanguage = (id) => {
+        if (id !== 1) {
+            this.setState({
+                languages: this.state.languages.filter(
+                    (language) => language.id !== id
                 )
             });
         }
@@ -144,6 +172,23 @@ class Body extends Component {
         }));
     }
 
+    handleSetLanguageElement = (id, event) => {
+        const { name, value } = event.target;
+        this.setState((prevState) => ({
+            languages: prevState.languages.map((language) => {
+                if (language.id === id) {
+                    return {
+                        ...language,
+                        [name]: value
+                    };
+                }
+                return language;
+            })
+        }));
+    }
+
+
+
     employmentHandlers = {
         handleDeleteEmployment: this.handleDeleteEmployment,
         handleAddEmployment: this.handleAddEmployment,
@@ -158,6 +203,12 @@ class Body extends Component {
 
     }
 
+    languageHandlers = {
+        handleDeleteLanguage: this.handleDeleteLanguage,
+        handleAddLanguage: this.handleAddLanguage,
+        setLanguageElement: this.handleSetLanguageElement
+
+    }
 
     render() {
         return (
@@ -169,12 +220,15 @@ class Body extends Component {
                     employments={this.state.employments}
                     education={this.state.education}
                     educationHandlers={this.educationHandlers}
+                    languageHandlers={this.languageHandlers}
+                    languages={this.state.languages}
                 />
                 <CvOutput
                     outputsClassName="CvOutputsContainer"
                     personalDetails={this.state.personalDetails}
                     employments={this.state.employments}
                     education={this.state.education}
+                    languages={this.state.languages}
                 />
             </div>
         )

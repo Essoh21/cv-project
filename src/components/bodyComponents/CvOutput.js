@@ -15,6 +15,7 @@ const CvOutput = (props) => {
                 userProfile={props.personalDetails.userProfile}
                 employments={props.employments}
                 education={props.education}
+                languages={props.languages}
 
             />
         </div>

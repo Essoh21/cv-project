@@ -46,7 +46,23 @@ const CvInput = (props) => {
                     />
                 ))}
             </div>
-            <Language containerClassName="LanguageContainer" />
+
+            <div>
+                <hr />
+                <h3>Language</h3>
+                {props.languages.map((language) => (
+                    <Language key={language.id}
+                        containerClassName="LanguageContainer"
+                        language={language}
+                        handleAddLanguage={props.languageHandlers.handleAddLanguage}
+                        setLanguageElement={(event) =>
+                            props.languageHandlers.setLanguageElement(language.id, event)}
+                        handleDeleteLanguage={() => props.languageHandlers.handleDeleteLanguage(language.id)}
+                    />
+
+                ))}
+            </div>
+
             <Hobby containerClassName="HobbyContainer" />
         </div>
     )

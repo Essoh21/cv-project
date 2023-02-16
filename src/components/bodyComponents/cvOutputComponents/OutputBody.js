@@ -1,6 +1,8 @@
 import OutputEmployment from "./outputMainBodyComponents/OutputEmployment";
 import OutputProfile from "./outputMainBodyComponents/OutputProfile";
 import OutputEducation from "./outputMainBodyComponents/OutputEducation";
+import OutputLanguage from "./outputMainBodyComponents/OutputLanguage";
+
 
 const OutputBody = (props) => {
     return (
@@ -18,6 +20,11 @@ const OutputBody = (props) => {
                     outputEducationClassName='EducationSection'
                     education={props.education}
                 />
+                <OutputLanguage
+                    outputlanguagesClassName='LanguageSection'
+                    languages={props.languages}
+                />
+
             </div>
             <div className="OutputAsside">
                 OutputAsside

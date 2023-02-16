@@ -6,7 +6,7 @@ const OutputEducation = (props) => {
             </h3>
             {props.education.map((educationLevel) => (
                 <div key={educationLevel.id}
-                    className="DisplayedEduction"
+                    className="DisplayedEducation"
                 >
                     <div className="TitleAndDate">
                         <span>

@@ -11,20 +11,22 @@ const Language = (props) => {
         <div className={props.containerClassName}>
             <hr />
             <section>
-                <h3> Language</h3>
                 <form>
                     <div className="LanguageInputs">
                         <Input
                             inputId={languageInputId}
                             inputName="language"
                             inputLabelContent="Language"
+                            handleChange={props.setLanguageElement}
 
                         />
                         <div >
                             <label htmlFor={selectionId}>
                                 Select level:
                             </label>
-                            <select id={selectionId} name="level">
+                            <select id={selectionId} name="level"
+                                onChange={props.setLanguageElement}
+                            >
                                 <option> Fluent</option>
                                 <option> Very good</option>
                                 <option>Good </option>
@@ -34,18 +36,22 @@ const Language = (props) => {
                         </div>
                     </div>
                     <TextArea
-                        areaLabelContent="descritpion(optional)"
+                        areaLabelContent="description(optional)"
                         areaId={textAreaId}
+                        textAreaName='description'
+                        handleChange={props.setLanguageElement}
                     />
                     <div className="LanguageButtons">
                         <Button
                             buttonContent="Delete"
                             buttonType="button"
                             buttonStyle={{ backgroundColor: "#f33", color: "#222" }}
+                            handleClick={props.handleDeleteLanguage}
                         />
                         <Button
                             buttonContent="Add language"
                             buttonType="submit"
+                            handleClick={props.handleAddLanguage}
                         />
 
                     </div>
