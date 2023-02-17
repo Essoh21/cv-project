@@ -8,8 +8,8 @@ const OutputLanguage = (props) => {
                 <div key={language.id}
                     className="DisplayedLanguage" >
                     <div className="LanguageAndlevel">
-                        <span>
-                            <h4> {language.language}</h4>
+                        <span className="Lang">
+                            {language.language}
                         </span>
                         <span>
                             {language.level}

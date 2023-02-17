@@ -281,24 +281,30 @@ button {
     box-sizing: border-box;
     grid-area: outputBody;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    grid-template-areas: "outputMainBody outputAsside";
+    grid-template-areas: "outputMainBody";
 }
 
 .OutputMainBody {
     grid-area: outputMainBody;
     box-sizing: border-box;
     width: 100%;
-    padding-right: .2rem;
-    padding-left: 1.5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
 
 }
 
 .EmploymentSection,
 .DisplayedEmployment,
 .EducationSection,
-.DisplayedEducation {
+.DisplayedEducation,
+.DisplayedLanguage,
+.LanguageSection {
     box-sizing: border-box;
     width: 100%;
     margin: 0;
@@ -308,7 +314,8 @@ button {
 }
 
 .EmploymentSection h3,
-.EducationSection h3 {
+.EducationSection h3,
+.LanguageSection h3 {
     width: 100%;
     box-sizing: border-box;
     margin: 0 0 .5rem 0;
@@ -316,7 +323,8 @@ button {
 }
 
 .EmploymentSection h4,
-.EducationSection h4 {
+.EducationSection h4,
+.LanguageSection {
     margin: 0;
     width: 100%;
     padding: 0;
@@ -324,7 +332,8 @@ button {
 }
 
 .EmploymentSection div,
-.EducationSection div {
+.EducationSection div,
+.LanguageSection div {
     width: 100%;
     box-sizing: border-box;
     display: flex;
@@ -333,25 +342,47 @@ button {
 
 
 /* aside*/
-.OutputAsside {
+/*.OutputAsside {
     grid-area: outputAsside;
     width: 100%;
     box-sizing: border-box;
     padding-left: .2rem;
-}
+} */
 
 .PositionAndDate,
-.TitleAndDate {
+.TitleAndDate,
+.LanguageAndlevel {
     width: 100%;
     box-sizing: border-box;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.LanguageAndlevel span {
+    text-align: center;
+}
+
 .PositionAndDate p,
-.TitleAndDate p {
+.TitleAndDate p,
+.LanguageAndlevel p {
     box-sizing: border-box;
     width: 100%;
     margin: 0;
     color: #777;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.Lang {
+    font-weight: bold;
+    font-size: .8rem;
+    padding-left: 1rem;
+}
+
+.Lang::before {
+    content: " ";
+    display: inline-block;
+    width: .3rem;
+    height: .3rem;
+    background-color: #555;
+    border-radius: 100%;
+    margin-right: .5rem;
 }

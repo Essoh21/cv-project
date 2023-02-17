@@ -21,14 +21,14 @@ const OutputBody = (props) => {
                     education={props.education}
                 />
                 <OutputLanguage
-                    outputlanguagesClassName='LanguageSection'
+                    outputLanguagesClassName='LanguageSection'
                     languages={props.languages}
                 />
 
             </div>
-            <div className="OutputAsside">
+            {/*   <div className="OutputAsside">
                 OutputAsside
-            </div>
+            </div> */}
         </div >
     )
 }
