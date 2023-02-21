@@ -125,49 +125,49 @@ function Body(props) {
 
     const handleSetEmploymentElement = (id, event) => {
         const { name, value, type, checked } = event.target;
-        setEmployments((prevState) => ({
-            employments: prevState.employments.map((employment) => {
+        setEmployments((prevEmployments) =>
+            prevEmployments.map((employment) => {
                 if (employment.id === id) {
                     return {
                         ...employment,
-                        [name]: type === 'checkbox' ? checked : value
+                        [name]: type === 'checkbox' ? checked : value,
                     };
                 }
                 return employment;
             })
-        }));
-    }
+        );
+    };
 
     const handleSetEducationElement = (id, event) => {
         const { name, value, type, checked } = event.target;
-        setEducation((prevState) => ({
-            education: prevState.education.map((educationLevel) => {
+        setEducation((prevEducation) =>
+            prevEducation.map((educationLevel) => {
                 if (educationLevel.id === id) {
                     return {
                         ...educationLevel,
-                        [name]: type === 'checkbox' ? checked : value
+                        [name]: type === 'checkbox' ? checked : value,
                     };
                 }
                 return educationLevel;
             })
-        }));
-    }
+        );
+    };
+
 
     const handleSetLanguageElement = (id, event) => {
         const { name, value } = event.target;
-        setLanguages((prevState) => ({
-            languages: prevState.languages.map((language) => {
+        setLanguages((prevLanguages) =>
+            prevLanguages.map((language) => {
                 if (language.id === id) {
                     return {
                         ...language,
-                        [name]: value
+                        [name]: value,
                     };
                 }
                 return language;
             })
-        }));
-    }
-
+        );
+    };
 
 
     const employmentHandlers = {
