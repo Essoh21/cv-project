@@ -1,56 +1,57 @@
-import { Component } from "react";
+
 import React from "react";
 import CvInput from "./bodyComponents/CvInput";
 import CvOutput from "./bodyComponents/CvOutput";
-class Body extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            personalDetails: {
-                userName: '',
-                userEmail: '',
-                userAge: '',
-                userJob: '',
-                userSurname: '',
-                userPhoneNumber: '',
-                userProfile: '',
+import { useState } from "react";
 
-            },
+function Body(props) {
 
-            employments: [
-                {
-                    id: 1,
-                    position: '',
-                    employer: '',
-                    isPositionPresent: false,
-                    startDate: '',
-                    endDate: '',
-                    description: '',
-                    state: ''
-                },
-            ],
-            education: [
-                {
-                    id: 1,
-                    title: '',
-                    state: '',
-                    school: '',
-                    isEducationPresent: false,
-                    description: '',
-                    startDate: '',
-                    endDate: '',
-                }
-            ],
-            languages: [{
-                id: 1,
-                language: '',
-                level: 'Fluent',
-                description: ''
-            }]
-        }
-    }
+    const [personalDetails, setPersonalDetails] = useState({
+        userName: '',
+        userEmail: '',
+        userAge: '',
+        userJob: '',
+        userSurname: '',
+        userPhoneNumber: '',
+        userProfile: '',
+    });
 
-    handleAddEmployment = (event) => {
+    const [employments, setEmployments] = useState([
+        {
+            id: 1,
+            position: '',
+            employer: '',
+            isPositionPresent: false,
+            startDate: '',
+            endDate: '',
+            description: '',
+            state: '',
+        },
+    ]);
+
+    const [education, setEducation] = useState([
+        {
+            id: 1,
+            title: '',
+            state: '',
+            school: '',
+            isEducationPresent: false,
+            description: '',
+            startDate: '',
+            endDate: '',
+        },
+    ]);
+
+    const [languages, setLanguages] = useState([
+        {
+            id: 1,
+            language: '',
+            level: 'Fluent',
+            description: '',
+        },
+    ]);
+
+    const handleAddEmployment = (event) => {
         event.preventDefault();
         const newEmployment = {
             id: Date.now(),
@@ -60,14 +61,12 @@ class Body extends Component {
             startDate: '',
             endDate: '',
             description: '',
-            state: ''
-        }
-        this.setState({
-            employments: [...this.state.employments, newEmployment]
-        })
-    }
+            state: '',
+        };
+        setEmployments([...employments, newEmployment]);
+    };
 
-    handleAddEducation = (event) => {
+    const handleAddEducation = (event) => {
         event.preventDefault();
         const newLevel = {
             id: Date.now(),
@@ -78,73 +77,55 @@ class Body extends Component {
             description: '',
             startDate: '',
             endDate: '',
-        }
-        this.setState({
-            education: [...this.state.education, newLevel]
-        })
-    }
+        };
+        setEducation([...education, newLevel]);
+    };
 
-    handleAddLanguage = (event) => {
+    const handleAddLanguage = (event) => {
         event.preventDefault();
         const newLanguage = {
             id: Date.now(),
             language: '',
-            level: 'Fluent'
-        }
-        this.setState({
-            languages: [...this.state.languages, newLanguage]
-        })
-    }
+            level: 'Fluent',
+            description: '',
+        };
+        setLanguages([...languages, newLanguage]);
+    };
 
-    handleDeleteEmployment = (id) => {
+    const handleDeleteEmployment = (id) => {
         if (id !== 1) {
-            this.setState({
-                employments: this.state.employments.filter(
-                    (employment) => employment.id !== id
-                )
-            });
+            setEmployments(employments.filter((employment) => employment.id !== id));
         }
-    }
+    };
 
-    handleDeleteLanguage = (id) => {
+    const handleDeleteLanguage = (id) => {
         if (id !== 1) {
-            this.setState({
-                languages: this.state.languages.filter(
-                    (language) => language.id !== id
-                )
-            });
+            setLanguages(languages.filter((language) => language.id !== id));
         }
-    }
+    };
 
-    handleDeleteEducation = (id) => {
+    const handleDeleteEducation = (id) => {
         if (id !== 1) {
-            this.setState({
-                education: this.state.education.filter(
-                    (educationLevel) => educationLevel.id !== id
-                )
-            });
+            setEducation(education.filter((educationLevel) => educationLevel.id !== id));
         }
-    }
+    };
 
-    addInformations = (e) => {
+    const addInformations = (e) => {
         e.target.preventDefault();
         alert('Informations Added');
-    }
+    };
 
-    setPersonalDetailsElement = (e) => {
-        const personalDetailsCopy = JSON.parse(JSON.stringify(this.state.personalDetails));
+    const setPersonalDetailsElement = (e) => {
+        const personalDetailsCopy = { ...personalDetails };
         const target = e.target;
         const element = target.name;
         personalDetailsCopy[element] = e.target.value;
-        this.setState({
-            personalDetails: personalDetailsCopy
-        })
-    }
+        setPersonalDetails(personalDetailsCopy);
+    };
 
-
-    handleSetEmploymentElement = (id, event) => {
+    const handleSetEmploymentElement = (id, event) => {
         const { name, value, type, checked } = event.target;
-        this.setState((prevState) => ({
+        setEmployments((prevState) => ({
             employments: prevState.employments.map((employment) => {
                 if (employment.id === id) {
                     return {
@@ -157,9 +138,9 @@ class Body extends Component {
         }));
     }
 
-    handleSetEducationElement = (id, event) => {
+    const handleSetEducationElement = (id, event) => {
         const { name, value, type, checked } = event.target;
-        this.setState((prevState) => ({
+        setEducation((prevState) => ({
             education: prevState.education.map((educationLevel) => {
                 if (educationLevel.id === id) {
                     return {
@@ -172,9 +153,9 @@ class Body extends Component {
         }));
     }
 
-    handleSetLanguageElement = (id, event) => {
+    const handleSetLanguageElement = (id, event) => {
         const { name, value } = event.target;
-        this.setState((prevState) => ({
+        setLanguages((prevState) => ({
             languages: prevState.languages.map((language) => {
                 if (language.id === id) {
                     return {
@@ -189,50 +170,49 @@ class Body extends Component {
 
 
 
-    employmentHandlers = {
-        handleDeleteEmployment: this.handleDeleteEmployment,
-        handleAddEmployment: this.handleAddEmployment,
-        setEmploymentElement: this.handleSetEmploymentElement
+    const employmentHandlers = {
+        handleDeleteEmployment,
+        handleAddEmployment,
+        setEmploymentElement: handleSetEmploymentElement
 
     }
 
-    educationHandlers = {
-        handleDeleteEducation: this.handleDeleteEducation,
-        handleAddEducation: this.handleAddEducation,
-        setEducationElement: this.handleSetEducationElement
+    const educationHandlers = {
+        handleDeleteEducation,
+        handleAddEducation,
+        setEducationElement: handleSetEducationElement
 
     }
 
-    languageHandlers = {
-        handleDeleteLanguage: this.handleDeleteLanguage,
-        handleAddLanguage: this.handleAddLanguage,
-        setLanguageElement: this.handleSetLanguageElement
+    const languageHandlers = {
+        handleDeleteLanguage,
+        handleAddLanguage,
+        setLanguageElement: handleSetLanguageElement
 
     }
 
-    render() {
-        return (
-            <div className="body">
-                <CvInput
-                    inputsClassName="CvInputsContainer"
-                    inputsHandler={this.setPersonalDetailsElement}
-                    employmentHandlers={this.employmentHandlers}
-                    employments={this.state.employments}
-                    education={this.state.education}
-                    educationHandlers={this.educationHandlers}
-                    languageHandlers={this.languageHandlers}
-                    languages={this.state.languages}
-                />
-                <CvOutput
-                    outputsClassName="CvOutputsContainer"
-                    personalDetails={this.state.personalDetails}
-                    employments={this.state.employments}
-                    education={this.state.education}
-                    languages={this.state.languages}
-                />
-            </div>
-        )
-    }
+    return (
+        <div className="body">
+            <CvInput
+                inputsClassName="CvInputsContainer"
+                inputsHandler={setPersonalDetailsElement}
+                employmentHandlers={employmentHandlers}
+                employments={employments}
+                education={education}
+                educationHandlers={educationHandlers}
+                languageHandlers={languageHandlers}
+                languages={languages}
+            />
+            <CvOutput
+                outputsClassName="CvOutputsContainer"
+                personalDetails={personalDetails}
+                employments={employments}
+                education={education}
+                languages={languages}
+            />
+        </div>
+    )
 }
+
 
 export default Body;
